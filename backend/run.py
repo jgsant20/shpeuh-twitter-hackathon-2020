@@ -11,3 +11,8 @@ api = tweepy.API(auth)
 public_tweets = api.home_timeline()
 for tweet in public_tweets:
     print(tweet.text)
+
+closest_trends = api.trends_closest(10, 10)
+print(closest_trends)
+
+# after this, all other functions are basically the same structures...
