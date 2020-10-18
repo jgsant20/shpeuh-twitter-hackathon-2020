@@ -3,3 +3,4 @@ config.py
 venv
 .venv
 .ipynb_checkpoints
+node_modules
