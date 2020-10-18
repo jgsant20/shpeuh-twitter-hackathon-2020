@@ -11,19 +11,31 @@ def get_canary():
 
 @app.route("/search/<search_query>")
 def get_search_tweets(search_query):
-  return jsonify(twitter_api_service.get_search_result_simplified(search_query))
+  try:
+    return jsonify(twitter_api_service.get_search_result_simplified(search_query))
+  except Exception as e:
+    return jsonify(e)
 
 @app.route("/full_search/<search_query>")
 def get_full_search_tweets(search_query):
-  return jsonify(twitter_api_service.get_search_result(search_query))
+  try:
+    return jsonify(twitter_api_service.get_search_result(search_query))
+  except Exception as e:
+    return jsonify(e)
 
 @app.route("/filtered_out_toxic_search/<search_query>")
 def get_filtered_out_toxic_search_tweets(search_query):
-  return jsonify(twitter_api_service.get_search_results_simplified_filtered(search_query, perspective_api_service.is_not_toxic))
+  try:
+    return jsonify(twitter_api_service.get_search_results_simplified_filtered(search_query, perspective_api_service.is_not_toxic))
+  except Exception as e:
+    return jsonify(e)
 
 @app.route("/filtered_out_sentimental_search/<search_query>")
 def get_filtered_out_sentimental_search_tweets(search_query):
-  return jsonify(twitter_api_service.get_search_results_simplified_filtered(search_query, sentiment_analysis_service.is_sentiment))
+  try:
+    return jsonify(twitter_api_service.get_search_results_simplified_filtered(search_query, sentiment_analysis_service.is_sentiment))
+  except Exception as e:
+    return jsonify(e)
 
 if __name__ =='__main__':
   app.run(debug=True)
