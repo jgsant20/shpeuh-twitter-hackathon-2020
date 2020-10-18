@@ -8,11 +8,9 @@ auth.set_access_token(config.ACCESS_TOKEN, config.ACCESS_TOKEN_SECRET)
 
 api = tweepy.API(auth)
 
-public_tweets = api.home_timeline()
-for tweet in public_tweets:
-    print(tweet.text)
+searched_tweets = api.search(q="hentai")
 
-closest_trends = api.trends_closest(10, 10)
-print(closest_trends)
+print(searched_tweets[0])
+
 
 # after this, all other functions are basically the same structures...
