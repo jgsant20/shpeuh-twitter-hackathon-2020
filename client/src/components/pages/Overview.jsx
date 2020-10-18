@@ -1,8 +1,12 @@
-import { Card, Checkbox, Divider, Empty, Progress, Statistic, Tag, Typography } from "antd";
+
 import React, { useState } from "react";
-import { RightOutlined } from '@ant-design/icons';
+import { Timeline } from 'react-twitter-widgets'
 import MainLayout from '../layout/MainLayout';
-import Theme from "../../theme";
+import {  TwitterTweetEmbed } from 'react-twitter-embed';
+import { Input } from 'antd';
+
+
+const { Search } = Input;
 
 const assignments = [
   { dueDate: "in 30 mins", title: "Lab 2", course: "ECE2202", desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum, repellendus unde! " },
@@ -28,9 +32,39 @@ export default function Overview() {
   return <>
     <MainLayout>
     <center>
-    <font size="+3"><b> #HealthyConversations </b> </font>
+    <h3
+            style={{
+              color: "#000000",
+              fontSize: 35,
+              fontFamily: 'nunito',
+              margin: 0,
+              fontWeight: "bold",
+            }}>
+
+            #Healthyconversations
+          
+          </h3>
+    <br />
+    <br />
+    <Search
+      placeholder="search topic"
+      enterButton="Search"
+      size="large"
+      onSearch={value => console.log(value)}
+    />
+    <br />
+    <br />
+    
+    <div className="centerContent">
+    <div className="selfCenter">
+    
+    <TwitterTweetEmbed tweetId="933354946111705097" />
+    </div>
+    </div>
     </center>
-      
+    
+
+
     </MainLayout >
   </>;
 }

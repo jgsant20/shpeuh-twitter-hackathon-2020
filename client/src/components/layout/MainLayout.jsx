@@ -1,8 +1,7 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-import  Icon  from '@ant-design/icons';
 import InnerPage from "./InnerPage";
-import SiderMenu from "./SiderMenu";
+
 
 const { Header } = Layout;
 
@@ -19,7 +18,7 @@ export default function MainLayout(props) {
             style={{
               color: "#fff",
               fontSize: 22,
-              fontFamily: 'Sumana',
+              fontFamily: 'nunito',
               margin: 0,
               fontWeight: "bold",
             }}>
@@ -30,9 +29,9 @@ export default function MainLayout(props) {
 
           <Menu mode="horizontal" style={{ backgroundColor: "#00acee" }} defaultSelectedKeys={["2"]}>
 
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
+          <Menu.Item key="1">Trending</Menu.Item>
+          <Menu.Item key="2">COVID-19</Menu.Item>
+          <Menu.Item key="3">Sports</Menu.Item>
           
           </Menu>
         

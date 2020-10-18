@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Lectures() {
+export default function Trending() {
     return (
         <div>
             <p>THIS IS THE LECTURES PAGE</p>
