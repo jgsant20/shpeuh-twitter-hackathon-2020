@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import "./App.less";
 import routes from "./util/routes";
 import AuthProvider, { AuthContext } from './AuthProvider';
-import SignIn from "./components/pages/SignIn";
+import SignIn from "./components/pages/covid19";
 import ProtectedRoute from "./util/ProtectedRoute";
 
 function App() {

@@ -1,13 +1,13 @@
-import Calendar from "../components/pages/SignIn";
-import Trending from "../components/pages/Trending";
 import Overview from "../components/pages/Overview";
+import Trending from "../components/pages/Trending";
+import sports from "../components/pages/sports";
+import covid19 from "../components/pages/covid19";
 
 const routes = [
     { name: "Overview", path: "/", exact: true, component: Overview },
-    { name: "Trending", path: "/lectures", exact: true, component: Trending },
-    { name: "Student ORGS", path: "/orgs", exact: true, component: Overview },
-    { name: "Calendar", path: "/calendar", exact: true, component: Calendar },
-    { name: "Grades", path: "/grades", exact: true, component: Calendar },
+    { name: "Trending", path: "/Trending", exact: true, component: Trending },
+    { name: "sports", path: "/sports", exact: true, component: sports },
+    { name: "covid19", path: "/covid19", exact: true, component: covid19 },
 ]
 
 
