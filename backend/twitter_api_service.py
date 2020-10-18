@@ -12,7 +12,7 @@ def get_raw_search_result(search_query):
   return tweepy.Cursor(api.search,
                       q=search_query,
                       count=100,
-                      result_type="popular",
+                      result_type="mixed",
                       include_entities=True,
                       lang="en").items() 
  
@@ -41,6 +41,4 @@ def get_search_result_simplified(search_query):
   return parse_into_lists_of_json_simplified(get_raw_search_result(search_query))
 
 def get_search_results_simplified_filtered(search_query, filter_out):
-  lst = parse_into_lists_of_json_simplified(get_raw_search_result(search_query))
-  filter(lambda x: filter_out(x["text"]), lst)
-  return lst
+  return list(filter(lambda x: filter_out(x["text"]), parse_into_lists_of_json_simplified(get_raw_search_result(search_query))))

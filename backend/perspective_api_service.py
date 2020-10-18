@@ -21,5 +21,5 @@ def get_toxicity_of_text(text):
   }
   return service.comments().analyze(body=analyze_request).execute()["attributeScores"]["TOXICITY"]["summaryScore"]["value"]
 
-def is_toxic(text):
+def is_not_toxic(text):
   return get_toxicity_of_text(text) < 0.5
