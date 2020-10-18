@@ -26,39 +26,11 @@ export default function Overview() {
   }
 
   return <>
-    <MainLayout title="Overview">
-      <Card style={{ maxWidth: "45rem" }}>
-        <div >
-          <Typography.Text >Assignments Progress</Typography.Text>
-          <Progress strokeColor={{ from: Theme.PRIMARY_COLOR, to: "#87d068" }} percent={calculateProgress()} />
-          <div></div>
-        </div>
-      </Card>
-      <div style={{ display: "flex", justifyContent: "space-around", maxWidth: "45rem", marginTop: 20 }}>
-        <div style={{ flexGrow: 2, marginRight: 20 }}>
-          <Card size="small" title={<Typography.Text style={{ fontWeight: "bold" }}>This week</Typography.Text>} bodyStyle={{ padding: 10 }}>
-            {items.length == 0 ? <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} /> : items.map((item) => {
-              return <Card key={item.dueDate} hoverable size="small" style={{ margin: "10px 0px" }} >
-                <div style={{ display: "flex", alignItems: 'center', alignItems: "center" }}>
-                  <Checkbox onChange={(e) => markAsDone(e, item)} />
-                  <div style={{ marginLeft: 20, flexGrow: 3 }}>
-                    <h4 style={{ fontWeight: 'bold' }}>{item.title}</h4>
-                    <p style={{ fontSize: "0.7rem", fontFamily: "Roboto" }}>{item.desc}</p>
-                  </div>
-                  <div style={{ marginLeft: 20 }}>
-                    <RightOutlined style={{ fontSize: "10px" }} />
-                  </div>
-                </div>
-              </Card>
-            })}
-          </Card>
-        </div>
-        <div>
-          <Card size="small" style={{ minWidth: "15rem" }} title={<Typography.Text style={{ fontWeight: "bold" }}>Notifications</Typography.Text>}>
-            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-          </Card>
-        </div>
-      </div>
+    <MainLayout>
+    <center>
+    <font size="+3"><b> #HealthyConversations </b> </font>
+    </center>
+      
     </MainLayout >
   </>;
 }

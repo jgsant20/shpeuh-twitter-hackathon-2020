@@ -1,16 +1,20 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-
+import  Icon  from '@ant-design/icons';
 import InnerPage from "./InnerPage";
 import SiderMenu from "./SiderMenu";
 
 const { Header } = Layout;
 
+
 export default function MainLayout(props) {
   return (
     <div>
-      <Layout style={{ height: "100vh" }}>
-        <Header className="header" style={{ backgroundColor: "#C8102E" }}>
+      <Layout>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }} className="header" style={{ backgroundColor: "#00acee" }}>
+        
+      
+
           <h3
             style={{
               color: "#fff",
@@ -18,19 +22,25 @@ export default function MainLayout(props) {
               fontFamily: 'Sumana',
               margin: 0,
               fontWeight: "bold",
-            }}
-          >
-            Scholarly
+            }}>
+
+            Open Minds
+          
           </h3>
-          <Menu
-            mode="horizontal"
-            style={{ backgroundColor: "#C8102E" }}
-            theme="dark"
-            defaultSelectedKeys={["2"]}
-          ></Menu>
+
+          <Menu mode="horizontal" style={{ backgroundColor: "#00acee" }} defaultSelectedKeys={["2"]}>
+
+          <Menu.Item key="1">nav 1</Menu.Item>
+          <Menu.Item key="2">nav 2</Menu.Item>
+          <Menu.Item key="3">nav 3</Menu.Item>
+          
+          </Menu>
+        
         </Header>
+
+
         <Layout>
-          <SiderMenu />
+          
           <InnerPage title={props.title}>
             {props.children}
           </InnerPage>

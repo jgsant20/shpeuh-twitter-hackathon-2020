@@ -10,7 +10,7 @@ const InnerPage = (props) => {
   return (
     <Layout style={{ padding: "0 20px 20px" }}>
       <Breadcrumb style={{ margin: "20px 0px 20px 20px" }}>
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
+       
       </Breadcrumb>
       <Content
         style={{
