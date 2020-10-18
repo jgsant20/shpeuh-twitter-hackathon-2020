@@ -37,5 +37,22 @@ def get_filtered_out_sentimental_search_tweets(search_query):
   except Exception as e:
     return jsonify(e)
 
+@app.route("/test/<search_query>")
+def get_test_msg(search_query):
+  json = [{"created_at": "22",
+            "entities": "22",
+            "id": "1317635176760020992",
+            "source": "22",
+            "text": "22"},
+            {"created_at": "22",
+            "entities": "21",
+            "id": "1317510540839817222",
+            "source": "22",
+            "text": "22"},]
+  try:
+    return jsonify(json)
+  except Exception as e:
+    return jsonify(e)
+
 if __name__ =='__main__':
-  app.run(debug=True)
+  app.run(host='localhost', debug=True)

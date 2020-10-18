@@ -5,14 +5,14 @@ import json
 auth = tweepy.OAuthHandler(config.API_KEY, config.API_SECRET_KEY)
 auth.set_access_token(config.ACCESS_TOKEN, config.ACCESS_TOKEN_SECRET)
 
-api = tweepy.API(auth)
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # courtesy of miss kist <3
 def get_raw_search_result(search_query):
   return tweepy.Cursor(api.search,
                       q=search_query,
                       count=100,
-                      result_type="mixed",
+                      result_type="popular",
                       include_entities=True,
                       lang="en").items() 
  
